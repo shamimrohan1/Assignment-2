@@ -7,7 +7,9 @@
 
 /* comman style */
 .display-flex{
-    display:flex;
+    display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .text-cary{
     color:#252432;
@@ -24,28 +26,48 @@
 .text-light-gray{
     color:#
 }
-/* header style */
-/* .header{
+header style
+.header{
         width:1140px;
         height:641px;
     
-} */
-
-.navbar{
-    justify-content:space-between;
-    align-items:center;
 }
 
-.nav-item{
-    list-style:none;
-    margin-right:30px;
-}
+nav.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #fff;
+  }
 
-.nav-link{
-    text-decoration:none;
-    font-weight:500;
-}
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+  }
 
+  .nav-link {
+    text-decoration: none;
+    font-weight: 500;
+    color: #555;
+  }
+
+  .icon {
+    height: 20px;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+
+  /* Hide all items except logo and cart on mobile */
+  @media (max-width: 768px) {
+    .nav-links li:not(:last-child) {
+      display: none;
+    }
+  }
+.icon{
+    height: ;
+}
 /* section style  */
 .banner{
     justify-content:space-between;
@@ -58,6 +80,23 @@
     color:#000000;
      font-weight: bold;
 }
+
+@media (max-width: 768px) {
+  .banner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .banner-contentiner img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.text-light-gray{
+    font-size: 30px;}
+
+
 .banner-content{
   height: 325px;
   width: 570px;
@@ -81,6 +120,15 @@
 }
 
 
+.main-title{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 5px 15px;
+    align-items: center;
+    font-size: 35px;
+}
+
+
 .our-plans{
     margin-top:30px;
     display: grid;
@@ -99,6 +147,19 @@
     color:#111111;
     font-weight: bold;
     margin:0px;
+}
+
+@media (max-width: 768px) {
+  .our-plans {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small screens: 1 column */
+@media (max-width: 480px) {
+  .our-plans {
+    grid-template-columns: 1fr;
+  }
 }
 
 .main-content{
@@ -120,7 +181,17 @@
     height: 597;
 }
 
+@media (max-width: 768px) {
+  .Plants-Section {
+    flex-direction: column;
+    text-align: center;
+  }
 
+  .plants-img img {
+    max-width: 100%;
+    height: auto;
+  }
+}
 
 /* join section */
 .join-section {
@@ -158,6 +229,67 @@ button.btn-join {
 }
 
 
+
+/* Challenges Part  */
+
+.Latest-Deal{
+ 
+    margin-bottom:20px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+.Latest-Section{
+    background-image:url(./assets/deal-bloom.png);
+    width: 300px;
+    height: 200px;
+    color: white;
+}
+.latest-section1{
+    background-image:url(./assets/deal-ana.png);
+    width: 300px;
+    height: 200px;
+    color:#FFFFFF;
+}
+.latest-section2{
+    background-image:url(./assets/deal-zabo.png);
+    width: 600px;
+    height: 300px;
+}
+
+.Latest-Deal {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.chanlleng {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.Latest-Section,
+.latest-section1,
+.latest-section2 {
+  flex: 1;
+  padding: 1.5rem;
+  background-color: #f3f3f3;
+  text-align: center;
+  border-radius: 10px;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+  .chanlleng {
+    flex-direction: column;
+  }
+
+  .Latest-Deal {
+    padding: 1rem;
+  }
+}
+
 /* footer style */
 .footer-section{
     margin-top:30px;
@@ -182,38 +314,12 @@ button.btn-join {
 
 .social-icon {
   display: flex;
-  justify-content: flex-end; /* Align items to the right */
-  align-items: flex-start;   /* Align items to the top */
-  gap: 10px;                 /* Optional spacing between icons */
-  padding: 10px;             /* Optional padding inside the container */
+  justify-content: flex-end; 
+  align-items: flex-start;   
+  gap: 10px;                
+  padding: 10px;             
 }
 
-
-/* Challenges Part  */
-
-.Latest-Deal{
-    margin-top:20px;
-      display: grid;
-  grid-template-columns: auto auto auto;
-}
-
-.Latest-Section{
-    background-image:url(./assets/deal-bloom.png);
-    width: 300px;
-    height: 200px;
-    color: white;
-}
-.latest-section1{
-    background-image:url(./assets/deal-ana.png);
-    width: 300px;
-    height: 200px;
-    color:#FFFFFF;
-}
-.latest-section2{
-    background-image:url(./assets/deal-zabo.png);
-    width: 600px;
-    height: 300px;
-}
 .banner-desc {
     font-size: 22px;
     width: 600px;
